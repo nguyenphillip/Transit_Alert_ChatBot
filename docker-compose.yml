@@ -1,0 +1,12 @@
+version: "3"
+services:
+  api-service:
+    build: ./api_service
+    restart: always
+    expose:
+      - "8080"
+    links:
+      - bot-service
+  bot-service:
+    build: ./bot_service
+    restart: always
